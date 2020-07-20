@@ -2,13 +2,14 @@
 @import "./hero.scss";
 @import "./menu.scss";
 @import "./why.scss";
-@import "./lastestArticles.scss";
+@import "./latestArticles.scss";
+@import "./footer.scss";
 :root {
   --darkBlue: hsl(233, 26%, 24%);
   --limeGreen: hsl(136, 65%, 51%);
   --rightCyan: hsl(192, 70%, 51%);
 
-  --grayblue: hsl(233, 8%, 62%);
+  --grayBlue: hsl(233, 8%, 62%);
   --gray: hsl(220, 16%, 96%);
   --lightGray: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
@@ -37,29 +38,40 @@ body {
   padding: 0 var(--wrapperSpace);
 }
 
+@mixin title{
+  font-size: 2.5em;
+  color: var(--darkBlue);
+  font-weight: 300;
+  line-height: 1.3;
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+
 .title {
   &__h1 {
-    // border: 1px solid blue;
-    font-size: 2.5em;
-    color: var(--darkBlue);
-    font-weight: 300;
-    line-height: 1.3;
-    margin: 0;
-    margin-bottom: 0.5em;
+    @include title;
+  // border: 1px solid blue;
+  //   font-size: 2.5em;
+  //   color: var(--darkBlue);
+  //   font-weight: 300;
+  //   line-height: 1.3;
+  //   margin: 0;
+  //   margin-bottom: 0.5em;
   }
 
   &__h2 {
-    @extend .title__h1;
+    @include title;
     font-size: 1.5em;
     // border: 1px solid red;
   }
   &__h3 {
-    @extend .title__h1;
+    @include title;
     font-size: 1em;
   }
 }
 .button {
   // border: 1px solid red;
+  border: none;
   padding: 1em 2.2em;
   font-size: 1em;
   border-radius: 1.5em;
@@ -69,4 +81,39 @@ body {
     var(--limeGreen) 0%,
     var(--rightCyan) 100%
   );
+}
+
+%icon{
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  background-repeat: no-repeat;
+}
+
+.icon{
+  &__facebook{
+    @extend %icon;
+    background-image: url('../../static/images/icon-facebook.svg');
+  }
+
+  &__youtube{
+    @extend %icon;
+    background-image: url('../../static/images/icon-youtube.svg');
+  }
+
+   &__twitter{
+    @extend %icon;
+    background-image: url('../../static/images/icon-twitter.svg');
+  }
+
+  &__pinterest{
+    @extend %icon;
+    background-image: url('../../static/images/icon-pinterest.svg');
+  }
+
+  &__instagram{
+    @extend %icon;
+    background-image: url('../../static/images/icon-instagram.svg');
+  }
+
 }
