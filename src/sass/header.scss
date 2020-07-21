@@ -1,7 +1,34 @@
 .header {
   // border: 10px solid red;
   display: flex;
-  padding: 1em 1.5em;
+  padding: 1em 0;
   justify-content: space-between;
   background: white;
+
+  &__content{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__logo{
+    align-self: center;
+  }
+
+  .button{
+    display: none;
+  }
+  @media screen and (min-width:1024px){
+    .button{
+      display: inline;
+    }
+    &__content{
+      border: 1px solid red;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+
+
+  }
 }
