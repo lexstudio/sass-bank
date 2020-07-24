@@ -4,6 +4,7 @@
   padding: 1em 0;
   justify-content: space-between;
   background: white;
+  position: relative;
 
   &__content{
     display: flex;
@@ -22,7 +23,7 @@
       display: inline;
     }
     &__content{
-      border: 1px solid red;
+      // border: 1px solid red;
       width: 100%;
       display: flex;
       justify-content: space-between;
